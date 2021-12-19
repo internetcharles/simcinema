@@ -72,6 +72,7 @@ export const requestOffer = (id) => {
         studios[0].offerRequested = true;
         studios[0].rejected = true;
         studios[0].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[0].offer = -1
       }
       break;
     case 1:
@@ -84,6 +85,7 @@ export const requestOffer = (id) => {
         studios[1].offerRequested = true;
         studios[1].rejected = true;
         studios[1].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[1].offer = -1
       }
       break;
     case 2:
@@ -96,6 +98,7 @@ export const requestOffer = (id) => {
         studios[2].offerRequested = true;
         studios[2].rejected = true;
         studios[2].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[2].offer = -1
       }
       break;
     case 3:
@@ -107,7 +110,8 @@ export const requestOffer = (id) => {
       else {
         studios[3].offerRequested = true;
         studios[3].rejected = true;
-        studios[3].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[3].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message;
+        studios[3].offer = -1
       }
       break;
     case 4:
@@ -120,6 +124,7 @@ export const requestOffer = (id) => {
         studios[4].offerRequested = true;
         studios[4].rejected = true;
         studios[4].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[4].offer = -1
       }
       break;
     case 5:
@@ -132,6 +137,7 @@ export const requestOffer = (id) => {
         studios[5].rejected = true;
         studios[5].offerRequested = true;
         studios[5].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[5].offer = -1
       }
       break;
     case 6:
@@ -144,6 +150,7 @@ export const requestOffer = (id) => {
         studios[6].rejected = true;
         studios[6].offerRequested = true;
         studios[6].message = rejectedMessages[getRandomArbitrary(0, rejectedMessages.length - 1)].message
+        studios[6].offer = -1
       }
       break;
   }

@@ -34,6 +34,12 @@ const Funding = () => {
       </View>
       <View>
         <StudioCard companyName={studios[0].companyName} offer={studios[0].offer} onPress={() => handleBid(0)} />
+        <StudioCard companyName={studios[1].companyName} offer={studios[1].offer} onPress={() => handleBid(1)} />
+        <StudioCard companyName={studios[2].companyName} offer={studios[2].offer} onPress={() => handleBid(2)} />
+        <StudioCard companyName={studios[3].companyName} offer={studios[3].offer} onPress={() => handleBid(3)} />
+        <StudioCard companyName={studios[4].companyName} offer={studios[4].offer} onPress={() => handleBid(4)} />
+        <StudioCard companyName={studios[5].companyName} offer={studios[5].offer} onPress={() => handleBid(5)} />
+        <StudioCard companyName={studios[6].companyName} offer={studios[6].offer} onPress={() => handleBid(6)} />
       </View>
       <Button onPress={() => resetData()} label="RESET" />
     </SafeAreaView>

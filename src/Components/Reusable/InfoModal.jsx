@@ -1,22 +1,20 @@
 import React from 'react'
 import { StyleSheet, Text, View, Modal } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import Button from './Button'
 
 const InfoModal = ({ setModalVisible, modalVisible, offerInfo }) => {
   return (
-    <View style={styles.centerView}>
       <Modal
         animationType='slide'
         transparent
         visible={modalVisible}>
+          <View style={styles.centerView}>
           <Text>{offerInfo.companyName}</Text>
           <Text>{!offerInfo.rejected ? offerInfo.offer + ' million' : 'No Thanks!'}</Text>
           <Text>{offerInfo.message}</Text>
-          <TouchableOpacity onPress={() => setModalVisible(false)}>
-            <Text>Close</Text>
-          </TouchableOpacity>
+          <Button label='Close' onPress={() => setModalVisible(false)} />
+          </View>
       </Modal>
-    </View>
   )
 }
 
@@ -24,11 +22,11 @@ export default InfoModal
 
 const styles = StyleSheet.create({
   centerView: {
-    position: 'absolute',
-    zIndex: 2,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 22,
+    backgroundColor: '#c8c8c8',
+    zIndex: 2,
   }
 })

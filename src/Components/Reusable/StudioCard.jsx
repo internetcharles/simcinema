@@ -8,7 +8,7 @@ const StudioCard = ({
   return (
     <RectButton style={{ ...styles.container, backgroundColor: color }} {...{ onPress }}>
       <Text style={{ color: textColor, ...styles.label }}>{companyName}</Text>
-      <Text style={styles.offer}>{offer ? offer : "Haven't Asked"}</Text>
+      <Text style={styles.offer}>{offer > 0 ? "$" + offer + " million" : offer < 0 ? "Rejected!" : "Haven't Asked"}</Text>
     </RectButton>
   )
 }
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 5,
   },
   label: {
     fontFamily: 'Avenir-Heavy',
