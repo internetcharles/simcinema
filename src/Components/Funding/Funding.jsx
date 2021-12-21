@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, SafeAreaView, View } from 'react-native'
+import { StyleSheet, Text, SafeAreaView, View, Alert } from 'react-native'
+import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { setBudget, setInfo } from '../../Redux/actions/movieActions'
 import Button from '../Reusable/Button'
 import InfoModal from '../Reusable/InfoModal'
 import StudioCard from '../Reusable/StudioCard'
 import { requestOffer, resetData, studios } from './studioData'
 
-const Funding = () => {
+const Funding = ({ navigation }) => {
   const [modal, showModal] = useState(false);
   const [offerInfo, setOfferInfo] = useState({});
   const movieInfo = useSelector((state) => state.info)
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     resetData();
@@ -17,12 +21,34 @@ const Funding = () => {
 
   const handleBid = (id) => {
     if(studios[id].offerRequested) {
-      console.log("OFFER ALREADY REQUESTED")
+      setOfferInfo(studios[id]);
+      Alert.alert(
+        "Are you sure?",
+        `Do you want to accept the offer from ${studios[id].companyName} for $${studios[id].offer} million?`,
+        [
+          {
+            text: "Yes",
+            onPress: () => finalizeOffer()
+          },
+          {
+            text: "No"
+          }
+        ]
+      )
     } else {
       requestOffer(id);
       setOfferInfo(studios[id]);
       showModal(true);
     }
+  }
+
+  const finalizeOffer = () => {
+    dispatch(setBudget(offerInfo.offer));
+    dispatch(setInfo({
+      ...movieInfo,
+      companyName: offerInfo.companyName,
+    }))
+    navigation.navigate('actorselect');
   }
 
   return (

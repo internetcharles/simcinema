@@ -1,11 +1,12 @@
-import { SET_INFO } from "../actions/movieActions";
+import { SET_BUDGET, SET_INFO } from "../actions/movieActions";
 
 const initialState = {
   info: {
     title: '',
     genre: '',
     description: '',
-  }
+  },
+  budget: 0,
 };
 
 export default function reducer(state = initialState, action) {
@@ -14,6 +15,11 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         info: action.payload
+      }
+    case SET_BUDGET:
+      return {
+        ...state,
+        budget: action.payload
       }
     default:
       return state;

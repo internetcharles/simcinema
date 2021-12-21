@@ -6,6 +6,7 @@ import InfoSummary from './src/Components/CreateMovie/InfoSummary';
 import MovieInfo from './src/Components/CreateMovie/MovieInfo';
 import Funding from './src/Components/Funding/Funding';
 import Home from './src/Components/Home/Home';
+import ActorSelect from './src/Components/Select/ActorSelect';
 import store from './src/Redux/store';
 
 const AppStack = createStackNavigator();
@@ -19,6 +20,7 @@ const AppNavigator = () => (
         <AppStack.Screen name='movieinfo' component={MovieInfo} options={{ gestureEnabled: false }} />
         <AppStack.Screen name='infosummary' component={InfoSummary} options={{ gestureEnabled: false }} />
         <AppStack.Screen name='fundingscreen' component={Funding} options={{ gestureEnabled: false }} />
+        <AppStack.Screen name='actorselect' component={ActorSelect} options={{ gestureEnabled: false }} />
       </AppStack.Navigator>
     </NavigationContainer>
   </Provider>
