@@ -6,6 +6,9 @@ const initialState = {
     genre: '',
     description: '',
     leadActor: '',
+    leadActress: '',
+    composer: '',
+    sfx: '',
   },
   budget: 0,
 };

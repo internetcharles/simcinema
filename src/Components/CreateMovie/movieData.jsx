@@ -126,3 +126,31 @@ export const composers = [
     status: 'None',
   },
 ]
+
+export const sfx = [
+  {
+    name: 'Digital Domain',
+    price: 15,
+    status: 'Available'
+  },
+  {
+    name: 'Dream Quest',
+    price: 8,
+    status: 'Available',
+  },
+  {
+    name: 'Industrial Lights & Magic',
+    price: 20,
+    status: 'Available',
+  },
+  {
+    name: 'Matte World Digital',
+    price: 8,
+    status: 'Available',
+  },
+  {
+    name: 'None',
+    price: 0,
+    status: 'None'
+  }
+]

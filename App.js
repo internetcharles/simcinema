@@ -8,6 +8,8 @@ import Funding from './src/Components/Funding/Funding';
 import Home from './src/Components/Home/Home';
 import ActorSelect from './src/Components/Select/ActorSelect';
 import ActressSelect from './src/Components/Select/ActressSelect';
+import ComposerSelect from './src/Components/Select/ComposerSelect';
+import SFXSelect from './src/Components/Select/SFXSelect';
 import store from './src/Redux/store';
 
 const AppStack = createStackNavigator();
@@ -23,6 +25,8 @@ const AppNavigator = () => (
         <AppStack.Screen name='fundingscreen' component={Funding} options={{ gestureEnabled: false }} />
         <AppStack.Screen name='actorselect' component={ActorSelect} options={{ gestureEnabled: false }} />
         <AppStack.Screen name='actressselect' component={ActressSelect} options={{ gestureEnabled: false }} />
+        <AppStack.Screen name='composerselect' component={ComposerSelect} options={{ gestureEnabled: false }} />
+        <AppStack.Screen name='sfxselect' component={SFXSelect} options={{ gestureEnabled: false }} />
       </AppStack.Navigator>
     </NavigationContainer>
   </Provider>

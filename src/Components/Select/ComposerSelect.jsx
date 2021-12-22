@@ -2,33 +2,33 @@ import React from 'react'
 import { Alert, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux';
 import { setBudget, setInfo } from '../../Redux/actions/movieActions';
-import { actresses } from '../CreateMovie/movieData';
+import { composers } from '../CreateMovie/movieData';
 import SelectCard from '../Reusable/SelectCard';
 
-const ActressSelect = ({ navigation }) => {
+const ComposerSelect = ({ navigation }) => {
   const movieInfo = useSelector(state => state.info);
   const budget = useSelector(state => state.budget);
   const dispatch = useDispatch();
 
-  const selectActor = (id) => {
-    if (actresses[id].price > budget) {
+  const selectComposer = (id) => {
+    if (composers[id].price > budget) {
       Alert.alert(
         "Not enough money!",
-        `You don't have enough money to cast ${actresses[id].name}!`
+        `You don't have enough money to hire ${composers[id].name}!`
       ),
       [
         {
           text: "Okay"
         }
       ]
-    } else if (actresses[id].status === 'None') {
+    } else if (composers[id].status === 'None') {
       Alert.alert(
         "Are you sure?",
-        "Are you sure you don't want to cast a lead actress?",
+        "Are you sure you don't want to hire a composer?",
         [
           {
             text: "Yes",
-            onPress: () => submitActor(id)
+            onPress: () => submitComposer(id)
           },
           {
             text: "No"
@@ -39,12 +39,12 @@ const ActressSelect = ({ navigation }) => {
     else {
       Alert.alert(
         "Are you sure?",
-        `Would you like to cast ${actresses[id].name} in your film for $${actresses[id].price} million?`
+        `Would you like to hire ${composers[id].name} for $${composers[id].price} million?`
       ),
       [
         {
           text: "Yes",
-          onPress: () => submitActor(id)
+          onPress: () => submitComposer(id)
         },
         {
           text: "No"
@@ -53,24 +53,24 @@ const ActressSelect = ({ navigation }) => {
     }
   }
 
-  const submitActor = (id) => {
-    dispatch(setBudget(budget - actresses[id].price));
+  const submitComposer = (id) => {
+    dispatch(setBudget(budget - composers[id].price));
     dispatch(setInfo({
       ...movieInfo,
-      leadActress: actresses[id].name
+      composer: composers[id].name
     }));
-    navigation.navigate('composerselect')
+    navigation.navigate('sfxselect')
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <Text>{movieInfo.title}</Text>
       <Text>Budget: {budget} million</Text>
-      <Text>Select your lead actress:</Text>
+      <Text>Select your composer:</Text>
       {
-        actresses.map((actor, idx) => (
-          <View key={actor.name}>
-            <SelectCard selectName={actor.name} price={actor.price} status={actor.status} onPress={() => selectActor(idx)} />
+        composers.map((composer, idx) => (
+          <View key={composer.name}>
+            <SelectCard selectName={composer.name} price={composer.price} status={composer.status} onPress={() => selectComposer(idx)} />
           </View>
         ))
       }
@@ -78,7 +78,7 @@ const ActressSelect = ({ navigation }) => {
   )
 }
 
-export default ActressSelect
+export default ComposerSelect
 
 const styles = StyleSheet.create({
   container: {
