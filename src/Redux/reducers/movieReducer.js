@@ -5,6 +5,7 @@ const initialState = {
     title: '',
     genre: '',
     description: '',
+    leadActor: '',
   },
   budget: 0,
 };
