@@ -9,6 +9,7 @@ const initialState = {
     leadActress: '',
     composer: '',
     sfx: '',
+    audio: '',
   },
   budget: 0,
 };

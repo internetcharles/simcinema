@@ -38,18 +38,18 @@ const ActressSelect = ({ navigation }) => {
     }
     else {
       Alert.alert(
-        "Are you sure?",
-        `Would you like to cast ${actresses[id].name} in your film for $${actresses[id].price} million?`
-      ),
-      [
-        {
-          text: "Yes",
-          onPress: () => submitActor(id)
-        },
-        {
-          text: "No"
-        }
-      ]
+          "Are you sure?",
+          `Would you like to cast ${actresses[id].name} in your film for $${actresses[id].price} million?`,
+        [
+          {
+            text: "Yes",
+            onPress: () => submitActor(id)
+          },
+          {
+            text: "No"
+          }
+        ]
+      )
     }
   }
 

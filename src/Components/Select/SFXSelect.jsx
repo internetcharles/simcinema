@@ -24,7 +24,7 @@ const SFXSelect = ({ navigation }) => {
     } else if (sfx[id].status === 'None') {
       Alert.alert(
         "Are you sure?",
-        "Are you sure you don't want to cast a lead actor?",
+        "Are you sure you don't want to hire an visual effects house?",
         [
           {
             text: "Yes",
@@ -38,18 +38,18 @@ const SFXSelect = ({ navigation }) => {
     }
     else {
       Alert.alert(
-        "Are you sure?",
-        `Would you like to hire ${sfx[id].name} for $${sfx[id.price]} million?`
-      ),
-      [
-        {
-          text: "Yes",
-          onPress: () => submitSFX(id)
-        },
-        {
-          text: "No"
-        }
-      ]
+          "Are you sure?",
+          `Would you like to hire ${sfx[id].name} for $${sfx[id.price]} million?`,
+        [
+          {
+            text: "Yes",
+            onPress: () => submitSFX(id)
+          },
+          {
+            text: "No"
+          }
+        ]
+      )
     }
   }
 
@@ -59,7 +59,7 @@ const SFXSelect = ({ navigation }) => {
       ...movieInfo,
       sfx: sfx[id].name
     }));
-    navigation.navigate('sfxselect')
+    navigation.navigate('audioselect')
   }
 
   return (

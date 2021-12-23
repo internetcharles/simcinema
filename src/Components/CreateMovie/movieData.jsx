@@ -154,3 +154,31 @@ export const sfx = [
     status: 'None'
   }
 ]
+
+export const audio = [
+  {
+    name: 'Dolby',
+    price: 1,
+    status: 'Available'
+  },
+  {
+    name: 'Dolby Digital',
+    price: 5,
+    status: 'Available',
+  },
+  {
+    name: 'DTS Digital',
+    price: 3,
+    status: 'Available',
+  },
+  {
+    name: 'SDDS',
+    price: 3,
+    status: 'Available',
+  },
+  {
+    name: 'None',
+    price: 0,
+    status: 'None',
+  }
+]
