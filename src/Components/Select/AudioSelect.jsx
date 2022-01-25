@@ -39,17 +39,17 @@ const AudioSelect = ({ navigation }) => {
     else {
       Alert.alert(
         "Are you sure?",
-        `Would you like to hire ${audio[id].name} for $${audio[id].price} million?`
-      ),
-      [
-        {
-          text: "Yes",
-          onPress: () => submitAudio(id)
-        },
-        {
-          text: "No"
-        }
-      ]
+        `Would you like to hire ${audio[id].name} for $${audio[id].price} million?`,
+        [
+          {
+            text: "Yes",
+            onPress: () => submitAudio(id)
+          },
+          {
+            text: "No"
+          }
+        ]
+      )
     }
   }
 

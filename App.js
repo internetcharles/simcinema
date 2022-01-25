@@ -4,8 +4,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import InfoSummary from './src/Components/CreateMovie/InfoSummary';
 import MovieInfo from './src/Components/CreateMovie/MovieInfo';
+import FilmingHome from './src/Components/Filming/FilmingHome';
 import Funding from './src/Components/Funding/Funding';
 import Home from './src/Components/Home/Home';
+import MovieHome from './src/Components/Movie/MovieHome';
 import ActorSelect from './src/Components/Select/ActorSelect';
 import ActressSelect from './src/Components/Select/ActressSelect';
 import AudioSelect from './src/Components/Select/AudioSelect';
@@ -29,6 +31,8 @@ const AppNavigator = () => (
         <AppStack.Screen name='composerselect' component={ComposerSelect} options={{ gestureEnabled: false }} />
         <AppStack.Screen name='sfxselect' component={SFXSelect} options={{ gestureEnabled: false }} />
         <AppStack.Screen name='audioselect' component={AudioSelect} options={{ gestureEnabled: false }} />
+        <AppStack.Screen name='filming' component={FilmingHome} options={{ gestureEnabled: false }} />
+        <AppStack.Screen name='moviehome' component={MovieHome} options={{ gestureEnabled: false }} />
       </AppStack.Navigator>
     </NavigationContainer>
   </Provider>

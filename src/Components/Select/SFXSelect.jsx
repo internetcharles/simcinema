@@ -39,7 +39,7 @@ const SFXSelect = ({ navigation }) => {
     else {
       Alert.alert(
           "Are you sure?",
-          `Would you like to hire ${sfx[id].name} for $${sfx[id.price]} million?`,
+          `Would you like to hire ${sfx[id].name} for $${sfx[id].price} million?`,
         [
           {
             text: "Yes",
@@ -66,7 +66,7 @@ const SFXSelect = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <Text>{movieInfo.title}</Text>
       <Text>Budget: {budget} million</Text>
-      <Text>Select your SFX house:</Text>
+      <Text>Select your VFX house:</Text>
       {
         sfx.map((sfx, idx) => (
           <View key={sfx.name}>
