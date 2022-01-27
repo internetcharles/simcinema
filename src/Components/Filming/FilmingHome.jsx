@@ -98,33 +98,31 @@ const FilmingHome = ({ navigation }) => {
       <Text>Filming Progress: {movieProgress}%</Text>
       <SectionButton leftText='Movie Info' onPress={() => setShowMovieModal(true)} />
       <HypeSectionButton leftText='Advertising' rightText={advertisingInfo.hype} onPress={() => setShowAdvertising(true)} />
-      {
-        movieProgress < 100 ? <SectionButton leftText='Advance One Week' onPress={() => advanceOneWeek()} />
-        : <SectionButton leftText='Release Film' onPress={() => releaseFilm()} />
-      }
-      {
-        showMovieModal ? <MovieInfoModal
-        movieInfo={movieInfo}
-        movieModalVisible={showMovieModal}
-        setMovieModalVisible={setShowMovieModal}
-        />
-        : null
-      }
-      {
-        showAdvertising ? <AdvertisingModal
-        setModalVisible={setShowAdvertising} 
-        modalVisible={showAdvertising} 
-        advertisingInfo={advertisingInfo}
-        buyTvCommercials={buyTvCommercials}
-        buyMagazineNewspaperAds={buyMagazineNewspaperAds}
-        buyPosters={buyPosters}
-        buyMovieTrailers={buyMovieTrailers}
-        budget={budget}
-        />
-        : null
-      }
-      
-
+        {
+          movieProgress < 100 ? <SectionButton leftText='Advance One Week' onPress={() => advanceOneWeek()} />
+          : <SectionButton leftText='Release Film' onPress={() => releaseFilm()} />
+        }
+        {
+          showMovieModal ? <MovieInfoModal
+          movieInfo={movieInfo}
+          movieModalVisible={showMovieModal}
+          setMovieModalVisible={setShowMovieModal}
+          />
+          : null
+        }
+        {
+          showAdvertising ? <AdvertisingModal
+          setModalVisible={setShowAdvertising} 
+          modalVisible={showAdvertising} 
+          advertisingInfo={advertisingInfo}
+          buyTvCommercials={buyTvCommercials}
+          buyMagazineNewspaperAds={buyMagazineNewspaperAds}
+          buyPosters={buyPosters}
+          buyMovieTrailers={buyMovieTrailers}
+          budget={budget}
+          />
+          : null
+        }
     </SafeAreaView>
   )
 }
